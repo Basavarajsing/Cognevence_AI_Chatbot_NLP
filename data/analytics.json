@@ -1,0 +1,143 @@
+{
+    "total_messages": 36,
+    "total_queries": 18,
+    "fallback_count": 0,
+    "confidence_sum": 13.95,
+    "intents_count": {
+        "greeting": 6,
+        "python_basics": 4,
+        "natural_language_processing": 4,
+        "artificial_intelligence": 1,
+        "machine_learning": 1,
+        "project_ideas": 1,
+        "interview_tips": 1
+    },
+    "recent_queries": [
+        {
+            "query": "Tips for technical interview preparation",
+            "intent": "interview_tips",
+            "confidence": 0.5159,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:33"
+        },
+        {
+            "query": "Explain Natural Language Processing",
+            "intent": "natural_language_processing",
+            "confidence": 0.9079,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:33"
+        },
+        {
+            "query": "What are top final year project ideas?",
+            "intent": "project_ideas",
+            "confidence": 0.7007,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:33"
+        },
+        {
+            "query": "How does Python work?",
+            "intent": "python_basics",
+            "confidence": 0.6375,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:32"
+        },
+        {
+            "query": "What is Machine Learning?",
+            "intent": "machine_learning",
+            "confidence": 0.8824,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:32"
+        },
+        {
+            "query": "What is Artificial Intelligence?",
+            "intent": "artificial_intelligence",
+            "confidence": 0.871,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:25:27"
+        },
+        {
+            "query": "What is NLP?",
+            "intent": "natural_language_processing",
+            "confidence": 0.9048,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:18:45"
+        },
+        {
+            "query": "What is Python?",
+            "intent": "python_basics",
+            "confidence": 0.9318,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:18:45"
+        },
+        {
+            "query": "Hi",
+            "intent": "greeting",
+            "confidence": 0.928,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:18:45"
+        },
+        {
+            "query": "Hello, how are you?",
+            "intent": "greeting",
+            "confidence": 0.3572,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:18:45"
+        },
+        {
+            "query": "What is NLP?",
+            "intent": "natural_language_processing",
+            "confidence": 0.9048,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:17:17"
+        },
+        {
+            "query": "What is Python?",
+            "intent": "python_basics",
+            "confidence": 0.9318,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:17:17"
+        },
+        {
+            "query": "Hi",
+            "intent": "greeting",
+            "confidence": 0.928,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:17:17"
+        },
+        {
+            "query": "Hello, how are you?",
+            "intent": "greeting",
+            "confidence": 0.3572,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:17:17"
+        },
+        {
+            "query": "What is NLP?",
+            "intent": "natural_language_processing",
+            "confidence": 0.8507,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:12:00"
+        },
+        {
+            "query": "What is Python?",
+            "intent": "python_basics",
+            "confidence": 0.9328,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:12:00"
+        },
+        {
+            "query": "Hi",
+            "intent": "greeting",
+            "confidence": 0.9279,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:12:00"
+        },
+        {
+            "query": "Hello, how are you?",
+            "intent": "greeting",
+            "confidence": 0.4796,
+            "is_fallback": false,
+            "timestamp": "2026-11-18 14:12:00"
+        }
+    ]
+}

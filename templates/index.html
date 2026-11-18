@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot | NLP & Machine Learning Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">AI</div>
+                <div class="brand-info">
+                    <h1>Cognevance NLP</h1>
+                    <span class="brand-badge">Academic Edition</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/" class="nav-link active">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span>Chat Interface</span>
+                </a>
+                <a href="/dashboard" class="nav-link">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <span>Analytics Dashboard</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h3>Architecture Stack</h3>
+                <div class="tech-tag-container">
+                    <span class="tech-tag">Python 3</span>
+                    <span class="tech-tag">NLTK</span>
+                    <span class="tech-tag">TF-IDF</span>
+                    <span class="tech-tag">Logistic Regression</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <span>7th Sem Capstone Project</span>
+                <span style="color: var(--accent-teal);">v1.0.0</span>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-wrapper">
+            <!-- Header Bar -->
+            <header class="chat-header">
+                <div class="chat-header-title">
+                    <button id="sidebarToggleBtn" class="btn btn-secondary" style="display: none; padding: 6px 10px;" title="Toggle Sidebar">
+                        ☰
+                    </button>
+                    <div class="avatar">
+                        NLP
+                        <span class="online-indicator"></span>
+                    </div>
+                    <div class="header-text">
+                        <h2>NLP Intelligent Assistant</h2>
+                        <p><span>●</span> Active Engine: TF-IDF + Logistic Regression</p>
+                    </div>
+                </div>
+
+                <div class="chat-header-actions">
+                    <button id="clearChatBtn" class="btn btn-danger" title="Clear conversation history">
+                        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                        <span>Clear Chat</span>
+                    </button>
+
+                    <!-- Export Dropdown (Feature C) -->
+                    <div class="dropdown" id="exportDropdown">
+                        <button class="btn btn-secondary" id="exportDropdownBtn" type="button">
+                            <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            <span>Export History</span>
+                            <span style="font-size: 0.7rem;">▼</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="/export/json" class="dropdown-item" download>
+                                <span>📄</span> Export as JSON
+                            </a>
+                            <a href="/export/txt" class="dropdown-item" download>
+                                <span>📝</span> Export as Plain Text
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Chat Messages Container -->
+            <section class="chat-messages" id="chatMessages">
+                <!-- Initial Welcome Message from Bot -->
+                <div class="message bot">
+                    <div class="message-avatar">AI</div>
+                    <div class="message-body">
+                        <div class="message-bubble">
+                            Hello! I am your AI conversational assistant powered by Natural Language Processing and Scikit-learn.
+                            <br><br>
+                            You can ask me about:
+                            <ul style="margin: 8px 0 8px 20px;">
+                                <li>Artificial Intelligence, ML, Deep Learning & NLP concepts</li>
+                                <li>Python programming, essential libraries & syntax</li>
+                                <li>Technical viva preparation, career guidance & project ideas</li>
+                            </ul>
+                            Click any of the suggested topics below or type your question to get started!
+                        </div>
+                        <div class="message-meta">
+                            <span>System</span>
+                            <span class="intent-badge">greeting</span>
+                            <span class="confidence-badge">100% conf</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature A: Smart Suggested Questions -->
+            <section class="suggested-section">
+                <div class="suggested-header">
+                    <span>💡 Suggested Questions:</span>
+                </div>
+                <div class="suggested-container" id="suggestedContainer">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </section>
+
+            <!-- Chat Input Footer -->
+            <footer class="chat-input-wrapper">
+                <form class="chat-form" id="chatForm">
+                    <input 
+                        type="text" 
+                        class="chat-input" 
+                        id="userInput" 
+                        placeholder="Ask a question about AI, NLP, Python or career tips..." 
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="btn-send" id="sendBtn" title="Send message">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </form>
+            </footer>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>

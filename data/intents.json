@@ -1,0 +1,647 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hey there",
+        "Hi there",
+        "Greetings",
+        "What's up",
+        "Howdy",
+        "Is anyone there?",
+        "Hello chatbot",
+        "Hi friend",
+        "Yo",
+        "Good day to you",
+        "Hey buddy",
+        "Hi how are you doing",
+        "Warm greetings",
+        "Hey what's happening",
+        "Hello assistant",
+        "Hi there nice to meet you"
+      ],
+      "responses": [
+        "Hello! I am your AI-powered NLP Assistant. How can I help you today?",
+        "Hi there! Welcome. Feel free to ask me anything about AI, NLP, Python, or career guidance.",
+        "Greetings! How may I assist you with your queries today?",
+        "Hey! Great to see you. What topic would you like to explore today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Catch you later",
+        "Talk to you later",
+        "I have to go now",
+        "Farewell",
+        "Have a great day",
+        "Good night",
+        "See you soon",
+        "I am heading out",
+        "Leaving now",
+        "Bye bye",
+        "Take care",
+        "Have a nice day",
+        "Adios",
+        "Catch you on the flip side",
+        "Signing off",
+        "See you next time",
+        "I must leave now",
+        "Goodbye have a good evening"
+      ],
+      "responses": [
+        "Goodbye! Have a productive and wonderful day ahead!",
+        "Farewell! Feel free to return whenever you have more questions.",
+        "Take care! It was a pleasure assisting you.",
+        "See you later! Keep learning and exploring technology!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Thanks a lot",
+        "Thank you so much",
+        "Much appreciated",
+        "Thanks for your help",
+        "I appreciate your assistance",
+        "Thanks a bunch",
+        "That was really helpful",
+        "Awesome thanks",
+        "Great help thank you",
+        "Thanks for the explanation",
+        "Kudos to you",
+        "You are very helpful",
+        "Hearty thanks",
+        "Thanks mate",
+        "Thank you very kindly",
+        "I appreciate the detailed answer",
+        "Many thanks for answering",
+        "Super helpful thanks"
+      ],
+      "responses": [
+        "You're very welcome! Happy to assist you anytime.",
+        "Glad I could help! Do you have any other questions?",
+        "Anytime! Helping you understand complex topics is what I'm built for.",
+        "My pleasure! Let me know if you need clarification on anything else."
+      ]
+    },
+    {
+      "tag": "about_bot",
+      "patterns": [
+        "Who are you?",
+        "What are you?",
+        "Introduce yourself",
+        "Tell me about yourself",
+        "What is your name?",
+        "Are you a robot?",
+        "Are you human or AI?",
+        "Who created you?",
+        "Who built this chatbot?",
+        "What kind of bot are you?",
+        "Can you introduce yourself to me?",
+        "Give me your background",
+        "Who developed this software?",
+        "Explain who you are",
+        "What is your identity?",
+        "Who programmed you?",
+        "Are you an artificial intelligence system?",
+        "Who is the author of this bot?",
+        "Provide your introduction",
+        "Tell me about your origins"
+      ],
+      "responses": [
+        "I am an intelligent conversational AI chatbot developed using Natural Language Processing (NLP) techniques, Python, and Scikit-learn.",
+        "I'm an AI academic assistant designed to answer questions on AI, machine learning, NLP, programming, and career advice using TF-IDF and Logistic Regression.",
+        "I am an NLP-powered virtual assistant built for an engineering project demonstration. I understand natural language through intent classification and text tokenization!"
+      ]
+    },
+    {
+      "tag": "bot_capabilities",
+      "patterns": [
+        "What can you do?",
+        "What are your capabilities?",
+        "How can you help me?",
+        "What features do you offer?",
+        "What topics do you know about?",
+        "What can I ask you?",
+        "Show me your abilities",
+        "List your features and functionalities",
+        "What are your core functions?",
+        "How do you assist students?",
+        "What kind of queries can you solve?",
+        "What is your scope of knowledge?",
+        "Tell me what you are capable of doing",
+        "Give me a summary of your skills",
+        "What tasks can you perform?",
+        "What services do you provide?",
+        "How can you assist my learning?",
+        "What operations can you execute?",
+        "Can you answer technical questions?",
+        "What can this chatbot perform?"
+      ],
+      "responses": [
+        "I can answer questions regarding AI, Machine Learning, Deep Learning, NLP, Python programming, project ideas, interview preparation, and technical career advice. I also offer real-time analytics and chat export features!",
+        "My capabilities include: 1) Classifying user intent with high confidence, 2) Answering queries across tech and computer science topics, 3) Providing actionable career and project guidance, and 4) Tracking chat analytics.",
+        "You can ask me about AI concepts, Python syntax, ML algorithms, NLP pipelines, data science roles, or ask for study recommendations!"
+      ]
+    },
+    {
+      "tag": "artificial_intelligence",
+      "patterns": [
+        "What is Artificial Intelligence?",
+        "Define AI",
+        "Explain artificial intelligence",
+        "What does AI mean?",
+        "Can you explain the concept of AI?",
+        "How does artificial intelligence work?",
+        "What are the different types of AI?",
+        "Tell me about AI technology",
+        "Why is artificial intelligence important?",
+        "What is the definition of AI?",
+        "Introduction to artificial intelligence",
+        "Explain Narrow AI vs General AI",
+        "What are real-world applications of AI?",
+        "How is AI transforming modern industries?",
+        "What are the primary subfields of AI?",
+        "Tell me about the future of AI",
+        "What constitutes artificial intelligence?",
+        "Can you give an overview of AI systems?",
+        "How do AI agents make decisions?",
+        "Explain Strong AI and Weak AI"
+      ],
+      "responses": [
+        "Artificial Intelligence (AI) refers to the simulation of human intelligence in machines programmed to think, reason, learn, and solve problems like humans. It spans subfields like Machine Learning, Deep Learning, Robotics, and Natural Language Processing.",
+        "AI is categorized into: 1) Narrow/Weak AI (specialized in one task, like chatbots or image recognition), 2) General AI (AGI - human-level adaptability across any domain), and 3) Super AI (hypothetical intelligence surpassing humans).",
+        "AI works by combining large amounts of structured and unstructured data with intelligent, iterative processing algorithms, allowing software to learn automatically from patterns or features in the data."
+      ]
+    },
+    {
+      "tag": "machine_learning",
+      "patterns": [
+        "What is Machine Learning?",
+        "Define ML",
+        "Explain machine learning to me",
+        "How does machine learning work?",
+        "What are the different types of machine learning?",
+        "Explain Supervised vs Unsupervised learning",
+        "What is reinforcement learning in ML?",
+        "What are popular machine learning algorithms?",
+        "How is ML different from traditional programming?",
+        "Can you explain the machine learning workflow?",
+        "What is the difference between AI and ML?",
+        "What is model training in ML?",
+        "What is overfitting and underfitting in ML?",
+        "Explain classification and regression models",
+        "What are features and labels in machine learning?",
+        "Give examples of machine learning applications",
+        "How do machines learn from training data?",
+        "Explain the bias variance tradeoff in machine learning",
+        "What is cross validation in ML?",
+        "How does a machine learning pipeline function?"
+      ],
+      "responses": [
+        "Machine Learning (ML) is a subset of AI that enables systems to learn and improve from experience without being explicitly programmed. Instead of hardcoded rules, ML models learn patterns from historical data.",
+        "The three primary paradigms of Machine Learning are: 1) Supervised Learning (labeled data, e.g., Classification & Regression), 2) Unsupervised Learning (unlabeled data, e.g., Clustering & Dimensionality Reduction), and 3) Reinforcement Learning (reward/penalty agent-environment interaction).",
+        "In traditional programming, you feed Data and Rules to get Answers. In Machine Learning, you feed Data and Answers to get Rules (the trained model)!"
+      ]
+    },
+    {
+      "tag": "deep_learning",
+      "patterns": [
+        "What is Deep Learning?",
+        "Define deep learning",
+        "How does deep learning work?",
+        "What is an Artificial Neural Network?",
+        "Explain neural networks architecture",
+        "What is the difference between ML and Deep Learning?",
+        "What is a CNN in deep learning?",
+        "Explain RNN and LSTM networks",
+        "What are Transformers in deep learning?",
+        "Why do neural networks have hidden layers?",
+        "What is backpropagation in neural networks?",
+        "What activation functions are used in deep learning?",
+        "Explain ReLU and Softmax activations",
+        "When should I use deep learning instead of machine learning?",
+        "What hardware is required for deep learning?",
+        "Tell me about deep learning architectures",
+        "How do deep neural nets process tensors?",
+        "What is gradient descent in deep learning?",
+        "Explain convolutional layers for images",
+        "What is transfer learning in deep learning?"
+      ],
+      "responses": [
+        "Deep Learning is a specialized branch of Machine Learning based on Artificial Neural Networks with multiple hidden layers (hence 'deep'). It excels at automatically extracting representations from complex unstructured data like images, audio, and text.",
+        "Key architectures in Deep Learning include: Convolutional Neural Networks (CNNs) for vision, Recurrent Neural Networks (RNN/LSTM) for sequential data, and Transformer architectures (attention mechanism) which power modern LLMs.",
+        "Deep Learning automatically learns feature representations at progressive levels of abstraction, eliminating the need for manual feature engineering that is common in classical ML, but it requires much larger datasets and GPU acceleration."
+      ]
+    },
+    {
+      "tag": "natural_language_processing",
+      "patterns": [
+        "What is Natural Language Processing?",
+        "Define NLP",
+        "Explain Natural Language Processing",
+        "Explain NLP concepts",
+        "Explain Natural Language Processing to me",
+        "Tell me about natural language processing",
+        "How does natural language processing work?",
+        "What are the stages in an NLP pipeline?",
+        "Explain tokenization and lemmatization",
+        "What is TF-IDF in NLP?",
+        "What are stop words in NLP?",
+        "What is sentiment analysis in NLP?",
+        "What are common NLP tasks?",
+        "How does this chatbot use NLP?",
+        "Explain word embeddings and Word2Vec",
+        "What is Named Entity Recognition NER?",
+        "What is text preprocessing in NLP?",
+        "Why is NLP difficult for computers?",
+        "Explain POS tagging in NLP",
+        "How do computers understand human text?",
+        "What is n-gram feature extraction in NLP?",
+        "Explain stemming versus lemmatization",
+        "What is corpus linguistics in NLP?"
+      ],
+      "responses": [
+        "Natural Language Processing (NLP) is an interdisciplinary field of AI, computer science, and linguistics focused on enabling computers to understand, interpret, and generate human language.",
+        "A typical NLP pipeline involves: 1) Text Cleaning (lowercasing, punctuation removal), 2) Tokenization (splitting into words), 3) Stopword Filtering & Lemmatization, 4) Vectorization (e.g., TF-IDF or Embeddings), and 5) Machine Learning classification or generation.",
+        "This chatbot uses NLTK for tokenization and lemmatization, Scikit-learn's TF-IDF Vectorizer to convert sentences into numerical feature vectors, and Logistic Regression to classify user intents!"
+      ]
+    },
+    {
+      "tag": "python_basics",
+      "patterns": [
+        "What is Python?",
+        "Why should I learn Python?",
+        "Explain Python programming language",
+        "What makes Python popular for AI and data science?",
+        "Is Python dynamically typed?",
+        "What are lists, tuples, and dictionaries in Python?",
+        "Explain Python syntax and indentation rules",
+        "What are decorators in Python?",
+        "What is PEP 8 in Python?",
+        "Explain list comprehension in Python",
+        "What is the difference between Python 2 and Python 3?",
+        "How does memory management work in Python?",
+        "What is GIL Global Interpreter Lock?",
+        "Is Python compiled or interpreted?",
+        "Why is Python considered beginner friendly?",
+        "Explain virtual environments in Python",
+        "How do functions and classes work in Python?",
+        "What are generator functions in Python?",
+        "Explain lambda functions in Python",
+        "How to handle exceptions in Python?"
+      ],
+      "responses": [
+        "Python is a high-level, interpreted, dynamically typed programming language created by Guido van Rossum. It is renowned for its clean readability, vast ecosystem, and simplicity.",
+        "Python dominates AI and Data Science because of its rich scientific libraries (NumPy, Pandas, Scikit-learn, PyTorch, TensorFlow), simple syntax that accelerates prototyping, and active community support.",
+        "Key Python features include automatic garbage collection, dynamic typing, support for multiple paradigms (object-oriented, functional, procedural), and a comprehensive standard library ('batteries included')."
+      ]
+    },
+    {
+      "tag": "python_libraries",
+      "patterns": [
+        "What are essential Python libraries for data science?",
+        "What is NumPy used for in Python?",
+        "Explain Pandas library in Python",
+        "What is Scikit-learn library?",
+        "What is NLTK in Python?",
+        "What is Matplotlib library used for?",
+        "Explain Flask web framework in Python",
+        "Which libraries are used in this chatbot?",
+        "What is Seaborn used for?",
+        "Explain PyTorch and TensorFlow libraries",
+        "What is BeautifulSoup used for in Python?",
+        "What is the best library for NLP in Python?",
+        "Explain SciPy scientific library",
+        "Why do we use Scikit-learn for machine learning?",
+        "What is spaCy library used for?",
+        "How do I install Python libraries with pip?",
+        "What is Joblib in Python?",
+        "Compare Pandas DataFrame to NumPy arrays",
+        "What is Pytest in Python?",
+        "Explain how Matplotlib creates charts"
+      ],
+      "responses": [
+        "Crucial Python data science libraries include: NumPy (numerical multidimensional arrays), Pandas (data manipulation and DataFrames), Scikit-learn (classical ML algorithms), and Matplotlib/Seaborn (data visualization).",
+        "For NLP and web backends, popular libraries include: NLTK (natural language toolkit for tokenization/corpora), spaCy (industrial-strength NLP), HuggingFace Transformers, and Flask/FastAPI (lightweight web servers).",
+        "This project specifically uses NLTK for text preprocessing, Scikit-learn for TF-IDF feature extraction and Logistic Regression classification, Flask for backend API routes, and Matplotlib for evaluation charts!"
+      ]
+    },
+    {
+      "tag": "data_science",
+      "patterns": [
+        "What is Data Science?",
+        "Explain the data science lifecycle",
+        "What does a data scientist do?",
+        "What skills are needed for data science?",
+        "What is EDA Exploratory Data Analysis?",
+        "Explain feature engineering in data science",
+        "What is data cleaning and why is it important?",
+        "How is data science different from data analytics?",
+        "What math is required for data science?",
+        "What are data pipelines in data science?",
+        "Explain big data and its 3 Vs",
+        "What tools do data scientists use daily?",
+        "How do you evaluate a data science model?",
+        "What is data visualization in data science?",
+        "What is business intelligence vs data science?",
+        "Tell me about data science career paths",
+        "What is structured vs unstructured data?",
+        "Explain data wrangling techniques",
+        "How do data scientists handle missing values?",
+        "What is correlation versus causation in data science?"
+      ],
+      "responses": [
+        "Data Science is an interdisciplinary field combining domain expertise, programming skills, and mathematics/statistics to extract actionable insights and knowledge from structured and unstructured data.",
+        "The Data Science Lifecycle consists of: 1) Business Problem Understanding, 2) Data Collection & Storage, 3) Data Cleaning & Preprocessing, 4) Exploratory Data Analysis (EDA), 5) Model Building & Validation, and 6) Deployment & Monitoring.",
+        "Essential skills for a Data Scientist include Python/R, SQL, Statistics & Probability, Machine Learning algorithms, Data Wrangling, and Data Storytelling with tools like Matplotlib, Tableau, or PowerBI."
+      ]
+    },
+    {
+      "tag": "career_guidance",
+      "patterns": [
+        "How do I start a career in AI?",
+        "Career guidance for computer science students",
+        "How to become a Machine Learning Engineer?",
+        "What is the career roadmap for an NLP engineer?",
+        "How can I become a professional Data Scientist?",
+        "What should I study for a software engineering job?",
+        "Which programming language should I learn first for jobs?",
+        "How do I build a strong GitHub profile for placements?",
+        "What certifications are good for AI ML careers?",
+        "How to transition from software engineering to AI?",
+        "What kind of portfolio projects should I build for jobs?",
+        "How important is competitive programming for tech careers?",
+        "Career advice for freshers looking for tech jobs",
+        "What job roles exist in the AI field?",
+        "Should I do a Master's degree in AI or work in industry?",
+        "How do I get an AI ML internship?",
+        "What resume skills get shortlisted for ML jobs?",
+        "How do I find junior machine learning roles?",
+        "Career path for artificial intelligence developer",
+        "How to prepare for tech campus placements?"
+      ],
+      "responses": [
+        "To become an AI/ML Engineer: 1) Master Python and core mathematics (Linear Algebra, Calculus, Statistics), 2) Learn Scikit-learn, PyTorch, and NLP/Computer Vision fundamentals, 3) Build 3-4 end-to-end deployed projects on GitHub, and 4) Share your learnings publicly.",
+        "Build a T-shaped skill profile: have broad competence across software development (Git, Docker, APIs, Databases) and deep specialization in one domain like NLP, Computer Vision, or MLOps.",
+        "Focus on practical project deployments rather than just running tutorials in notebooks. Deploying a model via Flask/FastAPI with a frontend demonstrates full-stack software readiness to recruiters!"
+      ]
+    },
+    {
+      "tag": "interview_tips",
+      "patterns": [
+        "How should I prepare for technical interviews?",
+        "Tips for engineering job interviews",
+        "What are common machine learning interview questions?",
+        "How to prepare for an AI viva exam?",
+        "What questions are asked in a college project viva?",
+        "How should I explain this chatbot project to examiners?",
+        "Explain bias variance tradeoff for interviews",
+        "How to answer behavioral interview questions?",
+        "What is the STAR method in interviews?",
+        "How do I prepare for data structures and algorithms interviews?",
+        "What do interviewers look for in a final year project?",
+        "How to handle interview questions you don't know the answer to?",
+        "Common mistakes during coding interviews",
+        "How to impress technical interviewers?",
+        "Tips for cracking campus placement interviews",
+        "How to present my system architecture in viva defense?",
+        "What questions will external examiners ask on NLP?",
+        "How to defend my choice of TF-IDF and Logistic Regression?",
+        "How to practice mock interviews?",
+        "What questions should I ask the interviewer?"
+      ],
+      "responses": [
+        "For your project viva: 1) State the problem statement and real-world relevance clearly, 2) Explain the end-to-end pipeline (Preprocessing -> TF-IDF -> Logistic Regression -> Response Selection), 3) Justify your design choices (e.g., why TF-IDF over simple bag-of-words), and 4) Present actual evaluation metrics (F1-score, accuracy, confusion matrix).",
+        "Use the STAR technique (Situation, Task, Action, Result) when answering situational or project-oriented questions. It gives structured, persuasive proof of your hands-on problem-solving abilities.",
+        "If you encounter a question you don't know: Stay calm, articulate your thought process aloud, state relevant known principles, and avoid guessing blindly. Interviewers value scientific reasoning over guesswork!"
+      ]
+    },
+    {
+      "tag": "motivation",
+      "patterns": [
+        "I feel unmotivated to study",
+        "Give me some motivation",
+        "I feel overwhelmed with coding",
+        "Can you share an inspirational quote for coding?",
+        "Programming is difficult, how do I keep going?",
+        "How do I avoid burnout as an engineering student?",
+        "I have severe exam stress and anxiety",
+        "Give me words of encouragement",
+        "How to stay consistent with daily learning?",
+        "How do successful engineers deal with failure?",
+        "Cheer me up please",
+        "I failed a coding test, what should I do?",
+        "Inspire me to code today",
+        "How do I stop procrastinating on my projects?",
+        "Give me confidence for my upcoming exam",
+        "I feel like quitting computer science",
+        "How do I overcome imposter syndrome?",
+        "I am struggling with my project code",
+        "Encourage me to keep studying",
+        "Give me a positive thought for today"
+      ],
+      "responses": [
+        "Remember: 'Every expert was once a beginner, and every master was once a disaster.' Consistency beats intensity every single day. Write a little code today!",
+        "Debugging and errors are not roadblocks; they are the exact mechanism by which your brain learns software architecture. Take a deep breath, read the stack trace, and conquer it!",
+        "'Success is the sum of small efforts repeated day in and day out.' Take it one module at a time. You have worked hard, and you are fully capable of excelling in your project!",
+        "Take a short walk, drink some water, and break down the problem into smaller 10-minute tasks. Momentum follows action, not motivation!"
+      ]
+    },
+    {
+      "tag": "project_ideas",
+      "patterns": [
+        "Suggest some final year project ideas",
+        "What are good AI project ideas?",
+        "Suggest machine learning mini projects",
+        "What are unique NLP project ideas?",
+        "Give me project topics for computer science engineering",
+        "What projects will look impressive on my resume?",
+        "Suggest computer vision project ideas",
+        "How can I extend this chatbot project in the future?",
+        "What are good beginner Python projects?",
+        "Suggest deep learning project topics for college",
+        "What are real-world AI applications suitable for capstone projects?",
+        "Recommend healthcare AI project ideas",
+        "Suggest finance ML project topics",
+        "What are trending tech topics for project defense?",
+        "How to choose a unique capstone project topic?",
+        "Suggest smart chatbot project enhancements",
+        "What are innovative NLP project titles?",
+        "Ideas for final year engineering capstone",
+        "Give me software engineering project ideas",
+        "Recommend AI projects with web interfaces"
+      ],
+      "responses": [
+        "Top final-year project ideas: 1) Multilingual Healthcare Consultation Bot using Transformer embeddings, 2) Fake News and Misinformation Detector with Explainable AI (LIME/SHAP), 3) Automated Resume Screening and Candidate-Job Matching System, and 4) AI-powered Legal Document Summarizer.",
+        "To extend this chatbot project: Add Speech-to-Text (STT) and Text-to-Speech (TTS) integration, connect a vector database (RAG) with local documents, implement multi-turn contextual state tracking, or add semantic embeddings with BERT.",
+        "Impressive resume projects must possess three qualities: 1) End-to-end functionality (backend API + responsive frontend), 2) Real-world utility solving an actual user pain point, and 3) Clean automated test coverage with CI/CD."
+      ]
+    },
+    {
+      "tag": "education_courses",
+      "patterns": [
+        "Where can I learn AI and machine learning?",
+        "Recommend free resources for learning Python",
+        "Best YouTube channels for computer science education",
+        "Where can I learn NLP for free online?",
+        "Recommend textbooks for machine learning",
+        "What are top platforms to practice coding online?",
+        "Where can I find open datasets for college projects?",
+        "Recommend courses on Scikit-learn and Deep Learning",
+        "Which website is best for learning data structures and algorithms?",
+        "Where can I read research papers in AI?",
+        "Suggest websites for technical interview preparation",
+        "How can I learn Git and GitHub for free?",
+        "Recommend platforms for machine learning competitions",
+        "What is the best way to self-study computer science?",
+        "Where can I find free Python programming tutorials?",
+        "Suggest top MOOCs for AI engineering",
+        "What books should I read for machine learning?",
+        "Where can I study Natural Language Processing courses?",
+        "Free learning roadmaps for CS engineering",
+        "Suggest websites to learn machine learning algorithms"
+      ],
+      "responses": [
+        "Top free platforms for AI/ML: Andrew Ng's Machine Learning Specialization (Coursera/DeepLearning.AI), Fast.ai (Practical Deep Learning for Coders), Kaggle Learn, and freeCodeCamp.",
+        "For datasets and competitive learning: Kaggle, Hugging Face Datasets, UCI Machine Learning Repository, and Papers with Code (for state-of-the-art benchmarks).",
+        "For computer science fundamentals and coding practice: LeetCode, HackerRank, NeetCode, CS50 by Harvard, and official documentation of Python, NLTK, and Scikit-learn."
+      ]
+    },
+    {
+      "tag": "contact_support",
+      "patterns": [
+        "How can I contact human support?",
+        "Where can I report a bug in this application?",
+        "Who is the developer of this application?",
+        "Can I talk to a human administrator?",
+        "Give me developer contact information",
+        "Where can I find the source code repository on GitHub?",
+        "How do I submit project feedback?",
+        "Is there an administrator I can email?",
+        "Where can I get help with this chatbot system?",
+        "How do I contribute to this project codebase?",
+        "Where is the GitHub repository link?",
+        "Can I reach the engineering project team?",
+        "Who do I contact for academic project queries?",
+        "Where are the project documentation files stored?",
+        "How to report an issue with the chatbot?",
+        "Can I reach the creator of this bot?",
+        "Where can I find author credits?",
+        "Provide contact details for the project maintainer",
+        "How do I raise a ticket or bug report?",
+        "Where is the README file located?"
+      ],
+      "responses": [
+        "This project was developed as a final year academic demonstration. You can inspect all source code, system documentation, and architecture manuals in the project's repository and `docs/` folder.",
+        "For queries, bug reports, and code contributions, please submit an issue on the project's GitHub repository or review the user manual included in the documentation folder.",
+        "You can inspect full project details and instructions in `README.md` and `docs/project_report.md` located within the application root directory."
+      ]
+    },
+    {
+      "tag": "user_feelings",
+      "patterns": [
+        "How are you doing today?",
+        "How are you feeling right now?",
+        "Are you happy?",
+        "I am feeling stressed today with college",
+        "I am very tired and sleepy",
+        "I am excited about this chatbot project",
+        "Are you tired of answering so many questions?",
+        "How is your day going chatbot?",
+        "I feel very happy today",
+        "I am feeling down and sad today",
+        "How do you feel as an AI assistant?",
+        "Are you bored answering queries?",
+        "I am worried about my final exams",
+        "Everything is going well with my studies",
+        "I am feeling great today",
+        "Are you having a good day?",
+        "I feel exhausted from studying",
+        "I am nervous about my project viva",
+        "How is your mood today?",
+        "I feel energized and ready to learn"
+      ],
+      "responses": [
+        "I'm functioning at peak efficiency and excited to help you explore artificial intelligence and natural language processing! How are you doing?",
+        "As an AI, I don't experience physical fatigue, but I'm always energized when processing queries and helping students master technical concepts!",
+        "If you're feeling stressed or exhausted, take a quick break! Step away from the screen, take a deep breath, and return with a refreshed mind. You've got this!",
+        "That's wonderful to hear! Positive energy makes learning and building software much more enjoyable. What shall we tackle next?"
+      ]
+    },
+    {
+      "tag": "general_knowledge_tech",
+      "patterns": [
+        "What is Cloud Computing?",
+        "Explain APIs and RESTful web services",
+        "What is Git and Version Control?",
+        "What is Docker and containerization?",
+        "Explain open source software philosophy",
+        "What is a database and SQL query language?",
+        "What is the difference between SQL and NoSQL databases?",
+        "What is an operating system and its purpose?",
+        "Explain client server architecture in web applications",
+        "What is continuous integration and continuous deployment CI CD?",
+        "What is an algorithm in computer science?",
+        "Explain frontend vs backend web development",
+        "What is cybersecurity and why is it crucial?",
+        "What is microservices software architecture?",
+        "Explain Agile and Scrum project management methodologies",
+        "What is high availability and scalability in systems?",
+        "What is a web server and reverse proxy?",
+        "Explain HTTP and HTTPS protocols",
+        "What is object oriented programming OOP?",
+        "Explain asynchronous programming and concurrency"
+      ],
+      "responses": [
+        "Cloud Computing is the on-demand delivery of computing services—including servers, storage, databases, networking, and software—over the Internet ('the cloud') with pay-as-you-go pricing (e.g., AWS, GCP, Azure).",
+        "An API (Application Programming Interface) allows different software applications to communicate with each other. RESTful APIs use standard HTTP verbs (GET, POST, PUT, DELETE) to transfer state representations (often JSON).",
+        "Git is a distributed version control system that tracks changes in source code during software development, enabling branching, collaboration, history audits, and seamless merging via platforms like GitHub.",
+        "In modern web architecture, the Frontend handles visual presentation and user interaction (HTML, CSS, JS), while the Backend processes business logic, NLP/ML models, and database persistence (Flask, Python, SQL)."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "Blah blah blah nonsense",
+        "Asdfghjkl random typing",
+        "xyzabc12345",
+        "gibberish input query here",
+        "qwertyuiop keys",
+        "random non words and symbols",
+        "zzzzzzzz snoring",
+        "can you bake a cheese pizza for me right now?",
+        "what color is an invisible unicorn?",
+        "sing me a full opera song right now",
+        "teleport me to the planet Mars",
+        "supercalifragilisticexpialidocious word",
+        "do backflips right now on my desk",
+        "hocus pocus abracadabra magic spell",
+        "alksjdflkajsdlfkjasdf mashing",
+        "gobbledygook phrase here",
+        "foobarbazqux undefined",
+        "can you clean my bedroom physically?",
+        "fly like an eagle across the room",
+        "tell me the winning lottery numbers for tomorrow"
+      ],
+      "responses": [
+        "I'm sorry, I didn't quite understand that. Could you please rephrase your question, or ask about AI, NLP, Python, or career guidance?",
+        "I'm not sure how to answer that yet. Try asking me about Artificial Intelligence, Machine Learning algorithms, or Python programming concepts!",
+        "My confidence score for that query is low. You can try selecting one of the suggested questions above or asking something related to technical topics.",
+        "I didn't catch that. As an AI assistant, I specialize in computer science, machine learning, NLP, and academic guidance. How can I help you in those areas?"
+      ]
+    }
+  ]
+}

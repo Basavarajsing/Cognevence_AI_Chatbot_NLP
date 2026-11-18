@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | AI Chatbot Performance & Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">AI</div>
+                <div class="brand-info">
+                    <h1>Cognevance NLP</h1>
+                    <span class="brand-badge">Academic Edition</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="/" class="nav-link">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    </svg>
+                    <span>Chat Interface</span>
+                </a>
+                <a href="/dashboard" class="nav-link active">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    <span>Analytics Dashboard</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-card">
+                <h3>NLP Model Details</h3>
+                <div class="tech-tag-container">
+                    <span class="tech-tag">Multinomial LR</span>
+                    <span class="tech-tag">WordNet Lemma</span>
+                    <span class="tech-tag">TF-IDF (1,2) Grams</span>
+                    <span class="tech-tag">Stratified 80/20</span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <span>Final Year Evaluation</span>
+                <span style="color: var(--accent-teal);">Online</span>
+            </div>
+        </aside>
+
+        <!-- Dashboard Content -->
+        <main class="dashboard-wrapper">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Chat Analytics & Model Dashboard</h1>
+                    <p>Real-time conversational telemetry and authentic machine learning evaluation metrics.</p>
+                </div>
+                <a href="/" class="btn btn-primary">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span>Back to Chat</span>
+                </a>
+            </div>
+
+            <!-- Top Row: Real Application Telemetry Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-title">Total Messages</span>
+                    <div class="stat-value" id="valTotalMessages">-</div>
+                    <span class="stat-badge badge-blue">User & Assistant</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">User Queries</span>
+                    <div class="stat-value" id="valUserQueries">-</div>
+                    <span class="stat-badge badge-teal">Intent Inferences</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Avg Confidence</span>
+                    <div class="stat-value" id="valAvgConfidence">-%</div>
+                    <span class="stat-badge badge-green">Inference Score</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Fallback Rate</span>
+                    <div class="stat-value" id="valFallbackRate">-%</div>
+                    <span class="stat-badge badge-amber">Unknown Queries</span>
+                </div>
+            </div>
+
+            <!-- Second Row: Offline Evaluation Metrics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-title">Model Accuracy</span>
+                    <div class="stat-value" id="valAccuracy" style="color: #60A5FA;">-%</div>
+                    <span class="stat-badge badge-blue">Test Set Accuracy</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Precision (Macro)</span>
+                    <div class="stat-value" id="valPrecision" style="color: var(--accent-teal);">-%</div>
+                    <span class="stat-badge badge-teal">Macro Precision</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">Recall (Macro)</span>
+                    <div class="stat-value" id="valRecall" style="color: #34D399;">-%</div>
+                    <span class="stat-badge badge-green">Macro Recall</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-title">F1-Score (Macro)</span>
+                    <div class="stat-value" id="valF1" style="color: var(--accent-amber);">-%</div>
+                    <span class="stat-badge badge-amber">Harmonic Mean</span>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <!-- Intent Distribution Bar Chart -->
+                <div class="card">
+                    <div class="card-title">
+                        <span>Frequently Detected User Intents</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Real Application Data</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="intentsBarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Confidence Distribution Doughnut -->
+                <div class="card">
+                    <div class="card-title">
+                        <span>Classification Reliability</span>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Success vs Fallback</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="reliabilityDoughnutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confusion Matrix Artifact Card -->
+            <div class="card" style="margin-bottom: 30px;">
+                <div class="card-title">
+                    <span>Model Confusion Matrix (21-Class Evaluation)</span>
+                    <a href="/results/confusion_matrix.png" target="_blank" class="btn btn-secondary" style="font-size: 0.78rem;">
+                        View Full Resolution
+                    </a>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+                    Generated by Scikit-learn test partition evaluation. Highlights precision alignment along the diagonal axis.
+                </p>
+                <div style="text-align: center;">
+                    <img src="/results/confusion_matrix.png" alt="Confusion Matrix" class="confusion-matrix-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Recent Queries Telemetry Table -->
+            <div class="card">
+                <div class="card-title">
+                    <span>Recent Session Queries Log</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Telemetry Feed</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>User Query</th>
+                                <th>Predicted Intent</th>
+                                <th>Confidence</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentQueriesBody">
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: var(--text-dim); padding: 24px;">
+                                    No user queries recorded yet in this session. Return to chat and ask a question!
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            let barChart = null;
+            let doughnutChart = null;
+
+            async function fetchDashboardMetrics() {
+                try {
+                    const res = await fetch("/api/analytics");
+                    if (!res.ok) return;
+                    const data = await res.json();
+
+                    // Populate Top Stats
+                    document.getElementById("valTotalMessages").innerText = data.total_messages || 0;
+                    document.getElementById("valUserQueries").innerText = data.total_queries || 0;
+                    document.getElementById("valAvgConfidence").innerText = (data.avg_confidence * 100).toFixed(1) + "%";
+                    document.getElementById("valFallbackRate").innerText = data.fallback_rate + "%";
+
+                    // Populate Model Offline Metrics
+                    if (data.model_metrics && Object.keys(data.model_metrics).length > 0) {
+                        const m = data.model_metrics;
+                        document.getElementById("valAccuracy").innerText = (m.accuracy * 100).toFixed(1) + "%";
+                        document.getElementById("valPrecision").innerText = (m.precision_macro * 100).toFixed(1) + "%";
+                        document.getElementById("valRecall").innerText = (m.recall_macro * 100).toFixed(1) + "%";
+                        document.getElementById("valF1").innerText = (m.f1_macro * 100).toFixed(1) + "%";
+                    }
+
+                    // Render Charts
+                    renderBarChart(data.top_intents || []);
+                    renderDoughnutChart(data.total_queries || 0, data.fallback_count || 0);
+
+                    // Render Recent Queries
+                    renderRecentQueries(data.recent_queries || []);
+
+                } catch (err) {
+                    console.error("Failed to load dashboard data:", err);
+                }
+            }
+
+            function renderBarChart(topIntents) {
+                const ctx = document.getElementById("intentsBarChart");
+                if (!ctx || typeof Chart === "undefined") return;
+
+                const labels = topIntents.map(i => i.intent);
+                const counts = topIntents.map(i => i.count);
+
+                if (labels.length === 0) {
+                    labels.push("No data yet");
+                    counts.push(0);
+                }
+
+                if (barChart) barChart.destroy();
+
+                barChart = new Chart(ctx, {
+                    type: "bar",
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: "Query Invocations",
+                            data: counts,
+                            backgroundColor: "rgba(37, 99, 235, 0.7)",
+                            borderColor: "#2563EB",
+                            borderWidth: 1,
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: "#94A3B8" },
+                                grid: { color: "rgba(255, 255, 255, 0.05)" }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                ticks: { color: "#94A3B8", stepSize: 1 },
+                                grid: { color: "rgba(255, 255, 255, 0.05)" }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function renderDoughnutChart(total, fallback) {
+                const ctx = document.getElementById("reliabilityDoughnutChart");
+                if (!ctx || typeof Chart === "undefined") return;
+
+                const confident = Math.max(0, total - fallback);
+
+                if (doughnutChart) doughnutChart.destroy();
+
+                doughnutChart = new Chart(ctx, {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Confident Prediction", "Fallback / Low Conf"],
+                        datasets: [{
+                            data: total === 0 ? [1, 0] : [confident, fallback],
+                            backgroundColor: [
+                                "rgba(20, 184, 166, 0.8)",
+                                "rgba(245, 158, 11, 0.8)"
+                            ],
+                            borderColor: ["#14B8A6", "#F59E0B"],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: "bottom",
+                                labels: { color: "#F8FAFC", boxWidth: 12 }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function renderRecentQueries(queries) {
+                const tbody = document.getElementById("recentQueriesBody");
+                if (!tbody) return;
+
+                if (queries.length === 0) {
+                    tbody.innerHTML = `
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--text-dim); padding: 24px;">
+                                No queries logged yet. Chat with the bot to populate live telemetry!
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                tbody.innerHTML = queries.map(q => `
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.78rem;">${q.timestamp}</td>
+                        <td style="font-weight: 500;">${q.query}</td>
+                        <td><span class="intent-badge">${q.intent}</span></td>
+                        <td>${(q.confidence * 100).toFixed(1)}%</td>
+                        <td>
+                            ${q.is_fallback 
+                                ? '<span class="fallback-badge">Fallback</span>' 
+                                : '<span class="stat-badge badge-green">Success</span>'
+                            }
+                        </td>
+                    </tr>
+                `).join("");
+            }
+
+            fetchDashboardMetrics();
+        });
+    </script>
+</body>
+</html>
